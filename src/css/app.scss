@@ -1,0 +1,264 @@
+// app global css in SCSS form
+.titleHome {
+  font-size: 38px;
+  text-align: center;
+  //color: white;
+}
+
+/*.joueur{
+    color: white;
+}*/
+
+.marginHome {
+  margin-left: 5%;
+}
+
+.marginImage {
+  margin-top: 5%;
+  color: white;
+}
+
+.lobbyCode {
+  font-size: 12px;
+  float: right;
+}
+
+.joueur {
+  font-size: 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  position: relative;
+  display: inline-grid;
+  background: black;
+}
+
+.game-status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border: 5px darkblue solid;
+  background: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  border-radius: 15px;
+}
+
+#score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  border: 5px darkblue solid;
+  background: black;
+  margin-top: 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+}
+
+#start-button {
+  margin-top: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.square {
+  display: block;
+}
+
+.blank {
+  background: black;
+}
+
+.wall {
+  border: 1px solid #233e8b;
+}
+.wallGhost {
+  border: 1px solid #b84230;
+}
+
+.lair {
+  border-top: 1px solid #325288;
+}
+
+.dot {
+  background: #a7bbc7;
+  border: 8px solid black;
+  border-radius: 50%;
+}
+
+.pill {
+  background: white;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.ghost {
+  position: relative;
+  border-radius: 10px 10px 2px 2px;
+  border: none;
+}
+
+.ghost::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: black;
+  border-radius: 50%;
+  left: 3px;
+  top: 5px;
+  border: 2px solid white;
+}
+
+.ghost::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: black;
+  border-radius: 50%;
+  right: 3px;
+  top: 5px;
+  border: 2px solid white;
+}
+.ghostman {
+  background-color: #cf4040;
+  position: relative;
+  border-radius: 10px 10px 2px 2px;
+  border: none;
+}
+
+.ghostman::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: black;
+  border-radius: 50%;
+  left: 3px;
+  top: 5px;
+  border: 2px solid white;
+}
+
+.ghostman::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: black;
+  border-radius: 50%;
+  right: 3px;
+  top: 5px;
+  border: 2px solid white;
+}
+
+.scared {
+  background: blue !important;
+}
+
+.blinky {
+  background: red;
+}
+
+.pacman {
+  background: #f2c037;
+  border: none;
+  border-radius: 50%;
+  clip-path: polygon(
+    0 0,
+    20px 0,
+    20px -5px,
+    8px 10px,
+    20px 25px,
+    20px 20px,
+    0 20px
+  );
+  animation: chew 0.3s linear forwards infinite;
+}
+
+@keyframes chew {
+  50% {
+    clip-path: polygon(
+      0 0,
+      20px 0,
+      20px 10px,
+      8px 10px,
+      20px 10px,
+      20px 20px,
+      0 20px
+    );
+  }
+}
+
+.grad1 {
+  background: -webkit-linear-gradient(92deg, #95d7e3, #eb76ff);
+  background-size: 600vw 600vw;
+
+  // make sure to put these after the background property
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textAnimate 3s linear infinite alternate;
+}
+@keyframes textAnimate {
+  from {
+    filter: hue-rotate(0deg);
+    background-position-x: 0%;
+  }
+  to {
+    filter: hue-rotate(360deg);
+    background-position-x: 600vw;
+  }
+}
+.boxs {
+  zoom: 140%;
+  padding: 1em 1em;
+  border-radius: 15px;
+  border: 2px solid transparent;
+}
+
+.isPac {
+  border: 4px solid #f2c037;
+}
+.isGho {
+  border: 4px solid #cf4040;
+}
+.isSca {
+  border: 5px solid transparent;
+  border-image: linear-gradient(
+    to bottom right,
+    #b827fc 0%,
+    #2c90fc 25%,
+    #b8fd33 50%,
+    #fec837 75%,
+    #fd1892 100%
+  );
+  border-radius: 15px;
+  border-image-slice: 1;
+}
